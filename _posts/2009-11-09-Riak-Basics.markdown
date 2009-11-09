@@ -61,7 +61,7 @@ Within "config.erlenv" we input the following:
 
 Configuration parameters expected by Riak are described [here][basic_setup]. I've been reviewing the docs in the source rather than those on the website since the published docs tend to lag behind a bit.
 
-In the above config you will notice I left out the "riak_heart_command". This option is only needed when using [heart][heart] and is only parsed by the Riak shell scripts (e.g. start-fresh.sh). For this post we are going to start our nodes directly with the erl command.
+In the above config you will notice I left out the "riak\_heart\_command". This option is only needed when using [heart][heart] and is only parsed by the Riak shell scripts (e.g. start-fresh.sh). For this post we are going to start our nodes directly with the erl command.
 
 ## Start the node
 
@@ -79,7 +79,7 @@ erl -connect_all false \
 -run riak start config.erlenv
 {% endhighlight %}
 
-The options passed to erl are described [here][erl]. The above command tells erl to start a new Erlang runtime system with the name "node1@127.0.0.1", the cookie "riak_demo_cookie", and the ebin directories of Riak and it's dependencies (webmachine, mochiweb) included in the code path. The command also tells erl to run "riak:start\[config.erlenv\]".
+The options passed to erl are described [here][erl]. The above command tells erl to start a new Erlang runtime system with the name "node1@127.0.0.1", the cookie "riak\_demo\_cookie", and the ebin directories of Riak and it's dependencies (webmachine, mochiweb) included in the code path. The command also tells erl to run "riak:start\[config.erlenv\]".
 
 ## Query the node
 
@@ -112,7 +112,7 @@ nodes/
         config.erlenv
 {% endhighlight %}
 
-Edit "nodes/node2/config.erlenv" and change "riak_nodename" and "riak_web_port".
+Edit "nodes/node2/config.erlenv" and change "riak\_nodename" and "riak\_web\_port".
 
 {% highlight erlang %}
 {cluster_name, "my_cluster"}.
@@ -128,7 +128,7 @@ Edit "nodes/node2/config.erlenv" and change "riak_nodename" and "riak_web_port".
 {jiak_name, "jiak"}.
 {% endhighlight %}
 
-Updating "riak_nodename" will ensure the Erlang node names will not collide. Updating "riak_web_port" will ensure the RESTful web interface for each node will not conflict with one another.
+Updating "riak\_nodename" will ensure the Erlang node names will not collide. Updating "riak\_web\_port" will ensure the RESTful web interface for each node will not conflict with one another.
 
 Using the start command from above we'll start both nodes.
 
